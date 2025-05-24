@@ -1,98 +1,61 @@
+<!-- index.php -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen Parcial</title>
-    <link rel="stylesheet" href="stilos.css">  
-    <script src="scripts.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Carrusel de Eventos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="https://ugb.edu.sv/wp-content/uploads/2024/10/UGB_LOGO_AZUL.png" alt="UGB Logo">
-        Universidad Gerardo Barrios
-        <div class="info-top-right">
-            <p><strong>Carrera:</strong> Ingeniería en Sistemas</p>
-            <p><strong>Código de Estudiante:</strong> SMSS016721</p>
-            <p><strong>Código de Estudiante:</strong> SMSS112623</p>
-        </div>
-    </header>
-    <main>
-        <!-- Cuadro 1: Carrusel de imágenes con descripción -->
-        <div class="container my-4">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXy3DZWeCR_iHdTsDO3qoXaNuvCuhWjgncaA&s" class="d-block w-100" alt="Imagen 1">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5> u </h5>
-                            <p> imagen ilustrativa</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://ugb.edu.sv/wp-content/uploads/2023/06/CULTURA.jpg" class="d-block w-100" alt="Imagen 2">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Imagen 2</h5>
-                            <p>La UGB se caracteriza por respetar la ideología, cultura y todo para que los estudiantes se sientan cómodos para aprender.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://via.placeholder.com/800x300" class="d-block w-100" alt="Imagen 3">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Imagen 3</h5>
-                            <p>Descripción de la imagen 3.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-            <div class="mt-3 p-3 border">
-                <h5>Descripción de las imágenes</h5>
-                <p id="descripcion">Descripción de la imagen 1.</p>
-            </div>
-        </div>
 
-        <!-- Cuadro 2: Imagen y texto con botón -->
-        <div class="container my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="https://static.vecteezy.com/system/resources/previews/020/599/794/non_2x/moral-and-ethical-values-loop-concept-icon-societal-standards-abstract-idea-thin-line-illustration-social-justice-philosophical-beliefs-isolated-outline-drawing-editable-stroke-vector.jpg" class="img-fluid" alt="Imagen del cuadro 2">
-                </div>
-                <div class="col-md-6">
-                    <h3>Modelos Educativos</h3>
-                    <p>La UGB se caracteriza por implementar un modelo educativo capaz de estar a la vanguardia y destacar entre otras universidades.</p>
-                    <a href="https://ugb.edu.sv/" class="btn btn-primary">Ir a otra página</a>
-                </div>
-            </div>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Nuestros Eventos</h2>
+  
+  <div id="eventosCarrusel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Tarjeta 1 -->
+      <div class="carousel-item active">
+        <div class="card text-center">
+          <img src="https://media.lmneuquen.com/p/a827ac219562bfc82bcf656c414b5779/adjuntos/195/imagenes/007/617/0007617264/egresadosjpg.jpg" class="card-img-top" alt="Evento 1">
+          <div class="card-body">
+            <h5 class="card-title">Festival de Verano</h5>
+            <p class="card-text">Un evento lleno de música, comida y diversión para toda la familia.</p>
+            <form action="solicitar_evento.php" method="POST">
+              <input type="hidden" name="evento" value="Festival de Verano">
+              <button type="submit" class="btn btn-primary">Solicitar evento</button>
+            </form>
+          </div>
         </div>
+      </div>
 
-        <!-- Cuadro 3: Visión de la UGB -->
-        <div class="container my-4">
-            <div class="p-3 border">
-                <h5>Visión de la Universidad Gerardo Barrios</h5>
-                <p><strong>MISIÓN:</strong> Somos una universidad que se adapta a los cambios e innova constantemente para responder a las necesidades actuales y futuras de la sociedad.</p>
-                <p><strong>VISIÓN:</strong> Ser una universidad referente comprometida con los sectores de la sociedad.</p>
-            </div>
+      <!-- Tarjeta 2 -->
+      <div class="carousel-item">
+        <div class="card text-center">
+          <img src="https://media.pagina7.cl/2025/02/gala-festival-de-vina-2025.jpg" class="card-img-top" alt="Evento 2">
+          <div class="card-body">
+            <h5 class="card-title">Noche de Gala</h5>
+            <p class="card-text">Una velada elegante con música en vivo y cena de lujo.</p>
+            <form action="solicitar_evento.php" method="POST">
+              <input type="hidden" name="evento" value="Noche de Gala">
+              <button type="submit" class="btn btn-primary">Solicitar evento</button>
+            </form>
+          </div>
         </div>
-    </main>
-    <footer>
-        <p><strong>Nombre del Estudiante:</strong></p>
-        <p>Alejandro Rivas</p> 
-        <p>Cristian Rosa</p>
-        <p><strong>Examen Parcial - Primer Cómputo</strong></p>
-    </footer>
+      </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Puedes agregar más tarjetas aquí -->
 
-    
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#eventosCarrusel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#eventosCarrusel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
